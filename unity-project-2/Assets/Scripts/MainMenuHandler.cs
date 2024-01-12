@@ -25,6 +25,7 @@ public class MainMenuHandler : MonoBehaviour
 
     public void SetPlayerName()
     {
-        inputField.text = PlayerPrefs.GetString("name");
+        GameManager.Instance.playerName = inputField.text;
+        Debug.Log("Player name set to: " + GameManager.Instance.playerName);
     }
 }

@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+
+    public string playerName;
 
     private void Awake()
     {
@@ -18,16 +21,5 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-    }
-
-    void Start()
-    {
-
-    }
-
-
-    void Update()
-    {
-        
     }
 }
