@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BruteZombie : ZombieAI
 {
+    //Inheritance
     //Polymorphism
     public BruteZombie()
     {

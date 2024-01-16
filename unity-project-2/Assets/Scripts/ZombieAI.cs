@@ -53,12 +53,14 @@ public class ZombieAI : MonoBehaviour
         }
     }
 
+    //Abstraction
     public virtual void Chase()
     {
         transform.LookAt(player.transform);
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
 
+    //Abstraction
     public virtual void DealDamage()
     {
         player.GetComponent<PlayerControl>().playerHealth -= damage;
