@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour
     private Rigidbody playerRB;
     [SerializeField] float speed = 10f;
     private float horizontalInput;
+    public float playerHealth = 100f;
 
     // Start is called before the first frame update
     void Start()
