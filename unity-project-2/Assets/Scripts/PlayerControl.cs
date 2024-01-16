@@ -15,7 +15,14 @@ public class PlayerControl : MonoBehaviour
         playerRB = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+    void Update()
+    {
+        if (playerHealth <= 0)
+        {
+            Die();
+        }
+    }
+
     void FixedUpdate()
     {
         Move();
@@ -25,5 +32,11 @@ public class PlayerControl : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
+        Time.timeScale = 0;
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BruteZombie : ZombieAI
+public class FastZombie : ZombieAI
 {
     public override void Chase()
     {
