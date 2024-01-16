@@ -6,6 +6,7 @@ public class ZombieAI : MonoBehaviour
 {
     public GameObject player;
 
+    //Encapsulation
     float m_speed;
     public float speed
     {
