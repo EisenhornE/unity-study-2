@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BruteZombie : ZombieAI
 {
+    //Polymorphism
     public BruteZombie()
     {
         speed = 3f;

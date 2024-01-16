@@ -6,7 +6,7 @@ public class ZombieAI : MonoBehaviour
 {
     public GameObject player;
 
-    float m_speed = 5f;
+    float m_speed;
     public float speed
     {
         get { return m_speed; }
@@ -21,8 +21,8 @@ public class ZombieAI : MonoBehaviour
         }
     }
 
-    protected float health = 10f;
-    protected float damage = 10f;
+    protected float health;
+    protected float damage;
     float damageCooldown = 1f;
     float damageTimer = 0f;
 
