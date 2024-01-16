@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class BruteZombie : ZombieAI
 {
-    public override void Chase()
+    public BruteZombie()
     {
-        base.Chase();
-    }
-
-    public override void DealDamage()
-    {
-        base.DealDamage();
+        speed = 3f;
+        damage = 20f;
     }
 }

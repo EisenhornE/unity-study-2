@@ -5,9 +5,24 @@ using UnityEngine;
 public class ZombieAI : MonoBehaviour
 {
     public GameObject player;
-    [SerializeField] protected float speed;
-    [SerializeField] protected float health;
-    [SerializeField] protected float damage;
+
+    float m_speed = 5f;
+    public float speed
+    {
+        get { return m_speed; }
+        set 
+        { 
+            if(value <= 0f)
+            {
+                Debug.LogError("Speed must be greater than 0");
+            }
+            else
+            m_speed = value; 
+        }
+    }
+
+    protected float health = 10f;
+    protected float damage = 10f;
     float damageCooldown = 1f;
     float damageTimer = 0f;
 
