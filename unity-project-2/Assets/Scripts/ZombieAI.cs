@@ -22,8 +22,31 @@ public class ZombieAI : MonoBehaviour
         }
     }
 
-    protected float health;
-    protected float damage;
+    private float _health;
+
+    public float health
+    {
+        get { return _health;}
+        set
+        {
+            if(value <= 0f)
+            {
+                Destroy(gameObject);
+            }
+            else
+            _health = value;
+        }
+    }
+
+    private float _damage;
+    public float damage
+    {
+        get { return _damage; }
+        set
+        {
+            _damage = value;
+        }
+    }
     float damageCooldown = 1f;
     float damageTimer = 0f;
 
@@ -47,7 +70,7 @@ public class ZombieAI : MonoBehaviour
 
     void OnCollisionStay(Collision other)
     {
-        if (other.gameObject.CompareTag("Player") && damageTimer <= 0f)
+        if (other.gameObject.CompareTag("Player") && damageTimer == 0f)
         {
             DealDamage();
             damageTimer = damageCooldown;
@@ -65,15 +88,15 @@ public class ZombieAI : MonoBehaviour
     public virtual void DealDamage()
     {
         player.GetComponent<PlayerControl>().playerHealth -= damage;
-        Debug.Log("Player Health: " + player.GetComponent<PlayerControl>().playerHealth);
+        Debug.Log(player.GetComponent<PlayerControl>().playerHealth);
     }
 
-    public void TakeDamage(float damage)
+    void OnCollisionEnter(Collision collision)
     {
-        health -= damage;
-        if (health <= 0)
+        if(collision.gameObject.CompareTag("Bullet"))
         {
-            Destroy(gameObject);
+            BulletScript bScript = collision.gameObject.GetComponent<BulletScript>();
+            health -= bScript.b_damage;
         }
     }
 }

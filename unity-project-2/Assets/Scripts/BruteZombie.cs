@@ -10,5 +10,6 @@ public class BruteZombie : ZombieAI
     {
         speed = 3f;
         damage = 20f;
+        health = 30f;
     }
 }

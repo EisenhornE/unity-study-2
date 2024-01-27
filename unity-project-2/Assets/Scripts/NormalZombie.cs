@@ -10,5 +10,6 @@ public class NormalZombie : ZombieAI
     {
         speed = 5f;
         damage = 10f;
+        health = 10f;
     }
 }
